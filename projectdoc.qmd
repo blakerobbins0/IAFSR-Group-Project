@@ -36,5 +36,4 @@ Dataset 2 changes:
 
 Dataset 3 changes: I wanted to clearly be able to see from a numerical value whether consumers had higher intentions to choose ultra- or minimally processed foods.
 
-
 ## 5. Recreated Figures
