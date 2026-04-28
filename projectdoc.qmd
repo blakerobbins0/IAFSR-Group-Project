@@ -1,5 +1,25 @@
 ---
-title: "projectdoc"
+title: "Improving Visualizations of Ultra-Processed Food Data"
+author: "Grace, Blake & Pace"
 format: html
 ---
 
+## 1. Manuscript Selection
+- How you found the paper
+- Why you chose it
+- Research objective
+
+## 2. Understanding the Study
+- Summary of methods
+- What the data represents
+
+## 3. Original Figures and Tables (Critique)
+- What the authors did
+- Strengths
+- Weaknesss
+
+## 4. Data Processing
+- Cleaning steps
+- Transformations
+
+## 5. Recreated Figures
