@@ -22,7 +22,13 @@ The data in this study represent how participants emotionally and behaviorally r
 
 ## 4. Data Processing
 
--   Cleaning steps
--   Transformations
+Using AI tools like ChatGPT and Claude by Anthropic, we were able to clean our data, making it simpler to create plots in rStudio. Below are the following changes and transformations made to data:
+
+Dataset 1 changes:
+
+Dataset 2 changes:
+
+Dataset 3 changes: I wanted to clearly be able to see from a numerical value whether consumers had higher intentions to choose ultra- or minimally processed foods.
+
 
 ## 5. Recreated Figures
