@@ -20,7 +20,7 @@ The data in this study represent how participants emotionally and behaviorally r
 -   Strengths
 -   Weakness
 
-The authors created schematic representations of the sequence of events in the trial. They utilized timelines to show the order pictures were shown and how long panelists had to respond. These figures could have been simplified to better express the objectives of the study.
+The authors created schematic representations of the sequence of events in the trial. They utilized timelines to show the order pictures were shown and how long panelists had to respond. These figures could have been simplified to better express the objectives of the study. The scale for affective rating and the figures used seem abstract and do not contribute to reader understanding.
 
 Additionally, no graphs or tables were included to visually represent the results of the study. Some visualization of the data collected would aid the reader in understanding the results.
 
