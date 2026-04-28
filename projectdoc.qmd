@@ -10,12 +10,9 @@ Our group used Mendeley Data to search for open datasets we could reanalyze. Aft
 
 The main objective of the paper and datasets chosen were to determine whether ultra-processed food elicited stronger emotional responses and motivations compared to unprocessed or minimally processed foods. Additionally, they aimed to see whether these emotional responses influenced people's intentions to consume those foods.
 
-Our goals were 
-
 ## 2. Understanding the Study
 
--   Summary of methods
--   What the data represents
+The data in this study represent how participants emotionally and behaviorally responded to images of different types of foods. Participants were shown pictures of ultra-processed foods (UPF) and unprocessed or minimally processed foods (UMPF), along with additional standard images used to measure emotional reactions. For each image, participants rated how they felt using two main measures: pleasantness (how positive or negative the image seemed) and arousal (how exciting the image felt). These ratings were recorded as numerical values, creating a dataset that reflects emotional responses to each type of food. In a second task, participants also rated their intention to consume the foods shown. Together, these data allow for comparisons between UPF and UMPF and help show how emotional responses may influence a person’s desire to eat certain foods.
 
 ## 3. Original Figures and Tables (Critique)
 
