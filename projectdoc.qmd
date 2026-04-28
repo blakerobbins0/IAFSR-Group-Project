@@ -5,21 +5,27 @@ format: html
 ---
 
 ## 1. Manuscript Selection
-- How you found the paper
-- Why you chose it
-- Research objective
+
+Our group used Mendeley Data to search for open datasets we could reanalyze. After searching, we landed on data from the article ***Ultra-Processed Foods Elicit Higher Approach Motivation Than Unprocessed and Minimally Processed Foods*** by Lemos et al. (2022). Three datasets were provided looking at different aspects of the research, which worked well for our group. Additionally, the data was already well organized and formatted, allowing us to easily reconstruct and reanalyze graphs based.
+
+The main objective of the paper and datasets chosen were to determine whether ultra-processed food elicited stronger emotional responses and motivations compared to unprocessed or minimally processed foods. Additionally, they aimed to see whether these emotional responses influenced people's intentions to consume those foods.
+
+Our goals were 
 
 ## 2. Understanding the Study
-- Summary of methods
-- What the data represents
+
+-   Summary of methods
+-   What the data represents
 
 ## 3. Original Figures and Tables (Critique)
-- What the authors did
-- Strengths
-- Weaknesss
+
+-   What the authors did
+-   Strengths
+-   Weakness
 
 ## 4. Data Processing
-- Cleaning steps
-- Transformations
+
+-   Cleaning steps
+-   Transformations
 
 ## 5. Recreated Figures
