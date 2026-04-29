@@ -174,5 +174,48 @@ Dataset 2 plots:
 Dataset 3 plots:
 
 ```{r}
+library(tidyverse)
+library(usethis)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+food_data <- read.csv("food_data.csv")
+
+direction_summary <- food_data %>%
+  filter(Food_Type == "Unprocessed") %>%
+  count(Direction)
+
+unique(direction_summary$Direction)
+direction_summary$Direction <- factor(direction_summary$Direction)
+
+p1 <- ggplot(direction_summary, aes(x = Direction, y = n, fill = Direction)) +
+  geom_col(width = 0.6, color = "black") +
+   scale_x_discrete(labels = c(
+    "Prefers_Ultraprocessed" = "Ultraprocessed",
+    "Prefers_Unprocessed" = "Unprocessed",
+    "No_Preference" = "No Preference"
+  )) +
+  scale_fill_manual(values = c(
+    "Prefers_Unprocessed" = "#4caf50",
+    "Prefers_Ultraprocessed" = "red4",
+    "No_Preference" = "slategray2"
+  )) +
+  scale_y_continuous(
+    breaks = seq(0, max(direction_summary$n), by = 15)
+  ) +
+  labs(
+    title = "Number of Participants by Preference",
+    x = "Preference Direction",
+    y = "Number of Participants") +
+  theme_minimal(base_size = 13) +
+  theme(
+    legend.position = "none",
+    plot.title = element_text(family = "Arial", size = 16, face = "bold"),
+    axis.title = element_text(family = "Arial", size = 14),
+    axis.text = element_text(family = "Arial", size = 12)
+    )
+
+print(p1)
 
 ```
