@@ -39,7 +39,20 @@ Dataset 3 changes: I wanted to clearly be able to see from a numerical value whe
 ## 5. Recreated Figures
 
 Datset 1 plots:
+
 ```{r}
+library(tidyverse)
+library(usethis)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+plot_bar <- function(data, y_var, title, y_label, fill_color) {
+  ggplot(data, aes(x = Category, y = .data[[y_var]])) +
+    geom_bar(stat = "identity", fill = fill_color) +
+    labs(title = title, y = y_label, x = "Category") +
+    theme_minimal()
+}
 #| label: fig-upf-pleasantness
 #| fig-cap: "Mean pleasantness ratings for ultra-processed food items, grouped by category."
 #| fig-width: 16
