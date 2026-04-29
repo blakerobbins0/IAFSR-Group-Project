@@ -40,7 +40,19 @@ Dataset 3 changes: I wanted to clearly be able to see from a numerical value whe
 
 Datset 1 plots:
 
+
+
 ```{r}
+
+#| label: load-data
+#| message: false
+#| warning: false
+
+library(readxl)
+library(here)
+
+file_path <- here::here("data", "Mendeley_dataset_table_1.xlsx")
+
 library(tidyverse)
 library(usethis)
 library(ggplot2)
