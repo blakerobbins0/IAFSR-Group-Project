@@ -38,6 +38,19 @@ Dataset 3 changes: I wanted to clearly be able to see from a numerical value whe
 
 ## 5. Recreated Figures
 
+Datset 1 plots:
+```{r}
+#| label: fig-upf-pleasantness
+#| fig-cap: "Mean pleasantness ratings for ultra-processed food items, grouped by category."
+#| fig-width: 16
+#| fig-height: 6
+#| warning: false
+
+plot_bar(upf, "Pleasantness_Mean",
+         "Pleasantness – Ultra-Processed Foods",
+         "Mean Pleasantness", "#E07B54")
+```
+
 Dataset 2 plots:
 
 Dataset 3 plots:
