@@ -40,177 +40,48 @@ Dataset 3 changes: I wanted to clearly be able to see from a numerical value whe
 
 Dataset 1 plots:
 
-```{# ─────────────────────────────────────────────────────────────────────────────}
-# Mendeley Dataset – Affective Ratings, 4 graphs with category facets (Vertical)
-# ─────────────────────────────────────────────────────────────────────────────
+\`\`\`{# ─────────────────────────────────────────────────────────────────────────────} \# Mendeley Dataset – Affective Ratings, 4 graphs with category facets (Vertical) \# ─────────────────────────────────────────────────────────────────────────────
 
-library(readxl)
-library(ggplot2)
-library(dplyr)
-library(here)
+library(readxl) library(ggplot2) library(dplyr) library(here)
 
 # ── 1. Load data ──────────────────────────────────────────────────────────────
 
-file_path <- here::here("data", "Mendeley_dataset_table_1.xlsx")
+file_path \<- here::here("data", "Mendeley_dataset_table_1.xlsx")
 
-col_names <- c("Item", "Pleasantness_Mean", "Pleasantness_SD", "Arousal_Mean", "Arousal_SD")
+col_names \<- c("Item", "Pleasantness_Mean", "Pleasantness_SD", "Arousal_Mean", "Arousal_SD")
 
-upf <- read_excel(file_path, sheet = "Table1b_UltraProcessed",
-                  skip = 2, col_names = col_names) %>%
-  mutate(
-    Pleasantness_Mean = as.numeric(Pleasantness_Mean),
-    Arousal_Mean      = as.numeric(Arousal_Mean),
-    Category = case_when(
-      Item %in% c("nugget", "bacon", "sausage", "hot dog",
-                  "cooked pork salami")                          ~ "Meat & Protein",
-      Item %in% c("potato chips", "tortilla chips", "starch chips",
-                  "microwave popcorn", "corn chips")             ~ "Snacks & Chips",
-      Item %in% c("chocolate bar", "gums", "ice cream",
-                  "chocolate-covered marshmallow", "popsicle",
-                  "jelly", "cookie", "cookie stuffed with chocolate",
-                  "cookie stuffed with vanilla", "chocolate discs",
-                  "wafer cookies")                               ~ "Sweets & Confectionery",
-      Item %in% c("ready-to-eat pizza", "hamburguer",
-                  "ready-to-eat lasagna", "instant noodles")     ~ "Fast Food & Meals",
-      Item %in% c("breakfast cereals", "brazilian cheese bread",
-                  "panettone with milk jam cream")               ~ "Bread & Cereals",
-      Item %in% c("grape soda", "ready-to-drink chocolate milk",
-                  "coke soda")                                   ~ "Beverages",
-      TRUE                                                       ~ "Other"
-    )
-  ) %>%
-  mutate(Category = factor(Category, levels = c(
-    "Meat & Protein", "Fast Food & Meals", "Snacks & Chips",
-    "Sweets & Confectionery", "Bread & Cereals", "Beverages", "Other"
-  )),
-  Item = reorder(Item, as.numeric(Category) * 100 + rank(Item)))
+upf \<- read_excel(file_path, sheet = "Table1b_UltraProcessed", skip = 2, col_names = col_names) %\>% mutate( Pleasantness_Mean = as.numeric(Pleasantness_Mean), Arousal_Mean = as.numeric(Arousal_Mean), Category = case_when( Item %in% c("nugget", "bacon", "sausage", "hot dog", "cooked pork salami") \~ "Meat & Protein", Item %in% c("potato chips", "tortilla chips", "starch chips", "microwave popcorn", "corn chips") \~ "Snacks & Chips", Item %in% c("chocolate bar", "gums", "ice cream", "chocolate-covered marshmallow", "popsicle", "jelly", "cookie", "cookie stuffed with chocolate", "cookie stuffed with vanilla", "chocolate discs", "wafer cookies") \~ "Sweets & Confectionery", Item %in% c("ready-to-eat pizza", "hamburguer", "ready-to-eat lasagna", "instant noodles") \~ "Fast Food & Meals", Item %in% c("breakfast cereals", "brazilian cheese bread", "panettone with milk jam cream") \~ "Bread & Cereals", Item %in% c("grape soda", "ready-to-drink chocolate milk", "coke soda") \~ "Beverages", TRUE \~ "Other" ) ) %\>% mutate(Category = factor(Category, levels = c( "Meat & Protein", "Fast Food & Meals", "Snacks & Chips", "Sweets & Confectionery", "Bread & Cereals", "Beverages", "Other" )), Item = reorder(Item, as.numeric(Category) \* 100 + rank(Item)))
 
-umpf <- read_excel(file_path, sheet = "Table1c_UnprocessedFood",
-                   skip = 2, col_names = col_names) %>%
-  mutate(
-    Pleasantness_Mean = as.numeric(Pleasantness_Mean),
-    Arousal_Mean      = as.numeric(Arousal_Mean),
-    Category = case_when(
-      Item %in% c("watermelon", "apple", "kiwi", "strawberry", "grape",
-                  "papaya", "pineapple*", "pear", "mango", "apricot",
-                  "orange", "peach", "banana")                   ~ "Fruit",
-      Item %in% c("salad", "salad*", "lettuce", "cherry tomato",
-                  "broccoli", "potato", "string beans", "carrot",
-                  "kale", "corn")                                ~ "Vegetables",
-      Item %in% c("beef", "salmon", "egg")                      ~ "Meat, Fish & Eggs",
-      Item %in% c("cashew nut", "bean")                         ~ "Nuts & Legumes",
-      Item %in% c("tapioca", "brazilian lunch")                  ~ "Grains & Meals",
-      Item %in% c("mandarin juice", "coconut water")             ~ "Beverages",
-      TRUE                                                       ~ "Other"
-    )
-  ) %>%
-  mutate(Category = factor(Category, levels = c(
-    "Meat, Fish & Eggs", "Fruit", "Vegetables",
-    "Nuts & Legumes", "Grains & Meals", "Beverages", "Other"
-  )),
-  Item = reorder(Item, as.numeric(Category) * 100 + rank(Item)))
+umpf \<- read_excel(file_path, sheet = "Table1c_UnprocessedFood", skip = 2, col_names = col_names) %\>% mutate( Pleasantness_Mean = as.numeric(Pleasantness_Mean), Arousal_Mean = as.numeric(Arousal_Mean), Category = case_when( Item %in% c("watermelon", "apple", "kiwi", "strawberry", "grape", "papaya", "pineapple*", "pear", "mango", "apricot", "orange", "peach", "banana") \~ "Fruit", Item %in% c("salad", "salad*", "lettuce", "cherry tomato", "broccoli", "potato", "string beans", "carrot", "kale", "corn") \~ "Vegetables", Item %in% c("beef", "salmon", "egg") \~ "Meat, Fish & Eggs", Item %in% c("cashew nut", "bean") \~ "Nuts & Legumes", Item %in% c("tapioca", "brazilian lunch") \~ "Grains & Meals", Item %in% c("mandarin juice", "coconut water") \~ "Beverages", TRUE \~ "Other" ) ) %\>% mutate(Category = factor(Category, levels = c( "Meat, Fish & Eggs", "Fruit", "Vegetables", "Nuts & Legumes", "Grains & Meals", "Beverages", "Other" )), Item = reorder(Item, as.numeric(Category) \* 100 + rank(Item)))
 
 # ── 2. Shared theme ───────────────────────────────────────────────────────────
 
-bar_theme <- theme_minimal(base_size = 11) +
-  theme(
-    plot.title         = element_text(face = "bold", size = 14, hjust = 0.5),
-    axis.title.y       = element_text(margin = margin(r = 8)),
-    axis.text.x        = element_text(angle = 45, hjust = 1, size = 9),
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor   = element_blank(),
-    panel.grid.major.y = element_line(color = "grey88"),
-    strip.text         = element_text(face = "bold", size = 10),
-    strip.background   = element_rect(fill = "grey92", color = NA),
-    plot.margin        = margin(12, 18, 12, 12)
-  )
+bar_theme \<- theme_minimal(base_size = 11) + theme( plot.title = element_text(face = "bold", size = 14, hjust = 0.5), axis.title.y = element_text(margin = margin(r = 8)), axis.text.x = element_text(angle = 45, hjust = 1, size = 9), panel.grid.major.x = element_blank(), panel.grid.minor = element_blank(), panel.grid.major.y = element_line(color = "grey88"), strip.text = element_text(face = "bold", size = 10), strip.background = element_rect(fill = "grey92", color = NA), plot.margin = margin(12, 18, 12, 12) )
 
 # ── 3. Plotting function ──────────────────────────────────────────────────────
 
-plot_bar <- function(data, mean_col, title, y_label, fill_color) {
-  ggplot(data, aes(x = Item, y = .data[[mean_col]])) +
-    geom_col(fill = fill_color, width = 0.65, alpha = 0.88) +
-    facet_wrap(~ Category, scales = "free_x", nrow = 1) +
-    labs(title = title, y = y_label, x = NULL) +
-    bar_theme
-}
+plot_bar \<- function(data, mean_col, title, y_label, fill_color) { ggplot(data, aes(x = Item, y = .data\[\[mean_col\]\])) + geom_col(fill = fill_color, width = 0.65, alpha = 0.88) + facet_wrap(\~ Category, scales = "free_x", nrow = 1) + labs(title = title, y = y_label, x = NULL) + bar_theme }
 
 # ── 4. Build the 4 graphs ─────────────────────────────────────────────────────
 
-p1 <- plot_bar(upf,  "Pleasantness_Mean",
-               "Pleasantness – Ultra-Processed Foods",
-               "Mean Pleasantness", "#E07B54")
+p1 \<- plot_bar(upf, "Pleasantness_Mean", "Pleasantness – Ultra-Processed Foods", "Mean Pleasantness", "#E07B54")
 
-p2 <- plot_bar(upf,  "Arousal_Mean",
-               "Arousal – Ultra-Processed Foods",
-               "Mean Arousal", "#C0392B")
+p2 \<- plot_bar(upf, "Arousal_Mean", "Arousal – Ultra-Processed Foods", "Mean Arousal", "#C0392B")
 
-p3 <- plot_bar(umpf, "Pleasantness_Mean",
-               "Pleasantness – Unprocessed / Minimally Processed Foods",
-               "Mean Pleasantness", "#5B9E6F")
+p3 \<- plot_bar(umpf, "Pleasantness_Mean", "Pleasantness – Unprocessed / Minimally Processed Foods", "Mean Pleasantness", "#5B9E6F")
 
-p4 <- plot_bar(umpf, "Arousal_Mean",
-               "Arousal – Unprocessed / Minimally Processed Foods",
-               "Mean Arousal", "#2471A3")
+p4 \<- plot_bar(umpf, "Arousal_Mean", "Arousal – Unprocessed / Minimally Processed Foods", "Mean Arousal", "#2471A3")
 
 # ── 5. Print graphs ───────────────────────────────────────────────────────────
 
-print(p1)
-print(p2)
-print(p3)
-print(p4)
-```
+print(p1) print(p2) print(p3) print(p4)
+
+```         
 
 Dataset 2 plots:
 
 Dataset 3 plots:
 
-```{r}
-library(tidyverse)
-library(usethis)
-library(ggplot2)
-library(dplyr)
-library(tidyr)
-
-food_data <- read.csv("food_data.csv")
-
-direction_summary <- food_data %>%
-  filter(Food_Type == "Unprocessed") %>%
-  count(Direction)
-
-unique(direction_summary$Direction)
-direction_summary$Direction <- factor(direction_summary$Direction)
-
-p1 <- ggplot(direction_summary, aes(x = Direction, y = n, fill = Direction)) +
-  geom_col(width = 0.6, color = "black") +
-   scale_x_discrete(labels = c(
-    "Prefers_Ultraprocessed" = "Ultraprocessed",
-    "Prefers_Unprocessed" = "Unprocessed",
-    "No_Preference" = "No Preference"
-  )) +
-  scale_fill_manual(values = c(
-    "Prefers_Unprocessed" = "#4caf50",
-    "Prefers_Ultraprocessed" = "red4",
-    "No_Preference" = "slategray2"
-  )) +
-  scale_y_continuous(
-    breaks = seq(0, max(direction_summary$n), by = 15)
-  ) +
-  labs(
-    title = "Number of Participants by Preference",
-    x = "Preference Direction",
-    y = "Number of Participants") +
-  theme_minimal(base_size = 13) +
-  theme(
-    legend.position = "none",
-    plot.title = element_text(family = "Arial", size = 16, face = "bold"),
-    axis.title = element_text(family = "Arial", size = 14),
-    axis.text = element_text(family = "Arial", size = 12)
-    )
-
-print(p1)
-
-```
 
 ```{r}
 
