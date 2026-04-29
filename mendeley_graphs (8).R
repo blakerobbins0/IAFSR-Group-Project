@@ -5,10 +5,11 @@
 library(readxl)
 library(ggplot2)
 library(dplyr)
+library(here)
 
 # ── 1. Load data ──────────────────────────────────────────────────────────────
 
-file_path <- "C:/Users/laure/Downloads/Mendeley_dataset_table_1.xlsx"
+file_path <- here::here("data", "Mendeley_dataset_table_1.xlsx")
 
 col_names <- c("Item", "Pleasantness_Mean", "Pleasantness_SD", "Arousal_Mean", "Arousal_SD")
 
