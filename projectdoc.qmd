@@ -37,3 +37,9 @@ Dataset 2 changes:
 Dataset 3 changes: I wanted to clearly be able to see from a numerical value whether consumers had higher intentions to choose ultra- or minimally processed foods, which the original data did not show. With help from ChatGPT, I added a column to my data that determined whether consumers preferred ultraprocessed or minimally processed foods from the positive or negative delta value. Additionally, all data was cleaned to remove missing or incomplete values and ensure that any categorical values matched.
 
 ## 5. Recreated Figures
+
+Dataset 1 plots:
+
+Dataset 2 plots:
+
+Dataset 3 plots:
