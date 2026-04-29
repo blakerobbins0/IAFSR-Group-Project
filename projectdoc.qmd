@@ -219,3 +219,33 @@ p1 <- ggplot(direction_summary, aes(x = Direction, y = n, fill = Direction)) +
 print(p1)
 
 ```
+
+```{r}
+
+delta_data <- food_data %>% filter(Food_Type == "Unprocessed")
+
+p3 <- ggplot(delta_data, aes(x = Delta)) +
+  geom_histogram(binwidth = 0.5, boundary = 0,
+                 linewidth = 0.3) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "gray30") +
+  geom_vline(xintercept = mean(delta_data$Delta),
+              color = "black", linewidth = 1) +
+  scale_x_continuous(breaks = seq(floor(min(delta_data$Delta)),
+                                  ceiling(max(delta_data$Delta)),
+                                  by = 1)) +
+  aes(fill = Delta > 0) +
+  scale_fill_manual(values = c("TRUE" = "red4", "FALSE" = "#4caf50")) +
+  labs(
+    title = "Participant Preference Strength Distribution",
+    subtitle = "Positive = Favors Ultraprocessed | Negative = Favors Unprocessed",
+    x = "Preference Score (Ultraprocessed - Unprocessed)",
+    y = "Number of Participants"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(family = "Arial", size = 16, face = "bold"),
+  )
+
+print(p3)
+
+```
