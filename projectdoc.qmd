@@ -40,8 +40,6 @@ Dataset 3 changes: I wanted to clearly be able to see from a numerical value whe
 
 Datset 1 plots:
 
-
-
 ```{r}
 #| label: load-data
 #| message: false
