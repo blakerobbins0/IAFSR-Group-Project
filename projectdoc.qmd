@@ -30,7 +30,7 @@ Additionally, no graphs or tables were included to visually represent the result
 
 Using AI tools like ChatGPT and Claude by Anthropic, we were able to clean our data, making it simpler to create plots in rStudio. Below are the following changes and transformations made to data:
 
-Dataset 1 changes: I restructured the data to create four graphs based on pleasantness of and arousal ratings for ultra-processed and unprocessed foods. I wanted to further divide each food featured in the questions into its own food category. I thought this made for some interesting comparisons within group, as well as across groups.
+Dataset 1 changes: I restructured the data to create four graphs based on pleasantness of and arousal ratings for ultra-processed and unprocessed foods. I thought the data could be simplified by dividing the foods into categories by food group. Most groups had very little variation withing them, and made comparing across food groups much easier.
 
 Dataset 2 changes:
 
@@ -129,6 +129,8 @@ plot_bar(upf, "Pleasantness_Mean",
          "Mean Pleasantness", "#E07B54")
 ```
 
+Plot 1 is a representation of the of the mean pleasantness rating of for ultra-processed food items after grouping them by food category.
+
 ```{r}
 
 #| label: fig-upf-arousal
@@ -141,6 +143,8 @@ plot_bar(upf, "Arousal_Mean",
          "Arousal – Ultra-Processed Foods",
          "Mean Arousal", "#C0392B")
 ```
+
+Plot 2 is a representation of the of the mean arousal rating of for ultra-processed food items after grouping them by food category.
 
 ```{r}
 #| label: fig-umpf-pleasantness
@@ -155,6 +159,8 @@ plot_bar(umpf, "Pleasantness_Mean",
 
 ```
 
+Plot 2 is a representation of the of the mean pleasantness rating of for unprocessed/ minimally processed food items after grouping them by food category.
+
 ```{r}
 
 #| label: fig-umpf-arousal
@@ -167,6 +173,8 @@ plot_bar(umpf, "Arousal_Mean",
          "Arousal – Unprocessed / Minimally Processed Foods",
          "Mean Arousal", "#2471A3")
 ```
+
+Plot 2 is a representation of the of the mean arousal rating of for unprocessed/ minimally processed food items after grouping them by food category.
 
 Dataset 2 plots:
 
