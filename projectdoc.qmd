@@ -40,6 +40,9 @@ Dataset 3 changes: I wanted to clearly be able to see from a numerical value whe
 
 Datset 1 plots:
 
+
+Plot 1 is a representation of the of the mean pleasantness rating of for ultra-processed food items after grouping them by food category.
+
 ```{r}
 #| label: load-data
 #| message: false
@@ -129,7 +132,7 @@ plot_bar(upf, "Pleasantness_Mean",
          "Mean Pleasantness", "#E07B54")
 ```
 
-Plot 1 is a representation of the of the mean pleasantness rating of for ultra-processed food items after grouping them by food category.
+Plot 2 is a representation of the of the mean arousal rating of for ultra-processed food items after grouping them by food category.
 
 ```{r}
 
@@ -144,7 +147,7 @@ plot_bar(upf, "Arousal_Mean",
          "Mean Arousal", "#C0392B")
 ```
 
-Plot 2 is a representation of the of the mean arousal rating of for ultra-processed food items after grouping them by food category.
+Plot 3 is a representation of the of the mean pleasantness rating of for unprocessed/ minimally processed food items after grouping them by food category.
 
 ```{r}
 #| label: fig-umpf-pleasantness
@@ -159,7 +162,7 @@ plot_bar(umpf, "Pleasantness_Mean",
 
 ```
 
-Plot 2 is a representation of the of the mean pleasantness rating of for unprocessed/ minimally processed food items after grouping them by food category.
+Plot 4 is a representation of the of the mean arousal rating of for unprocessed/ minimally processed food items after grouping them by food category.
 
 ```{r}
 
@@ -174,7 +177,6 @@ plot_bar(umpf, "Arousal_Mean",
          "Mean Arousal", "#2471A3")
 ```
 
-Plot 2 is a representation of the of the mean arousal rating of for unprocessed/ minimally processed food items after grouping them by food category.
 
 Dataset 2 plots:
 
