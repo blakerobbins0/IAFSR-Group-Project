@@ -40,7 +40,7 @@ Dataset 3 changes: I wanted to clearly be able to see from a numerical value whe
 
 Datset 1 plots:
 
-All of the following plots allow the reader to compare food categories based on arousal or pleasantness rating. Ultra-processed and unprocessed/minimally processed foods were evaluated separately.
+All of the following plots allow the reader to compare food categories based on arousal or pleasantness rating. Ultra-processed and unprocessed/minimally processed foods were evaluated separately to avoid making the graphs overwhelming.
 
 Plot 1 is a representation of the of the mean pleasantness rating of for ultra-processed food items after grouping them by food category.
 
