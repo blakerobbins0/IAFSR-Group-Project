@@ -180,6 +180,8 @@ Dataset 2 plots:
 
 Dataset 3 plots:
 
+The following bar chat shows the overall preference direction of all study participants. By grouping and counting these responses, the dominant trend of the data can be quickly visualized for readers to understand the key takeaway from the data, which is what preference direction was the most common in the research.
+
 ```{r}
 library(tidyverse)
 library(usethis)
@@ -225,6 +227,10 @@ p1 <- ggplot(direction_summary, aes(x = Direction, y = n, fill = Direction)) +
 
 print(p1)
 ```
+
+The following histogram was made because I wanted to not just show the preference direction of participants, but the strength and full distribution of their preferences for ultraprocessed and unprocessed foods. By plotting the delta values, the histogram clearly shows how many individuals leaned one way or another, and the strength of their preferences.
+
+I added a dashed vertical line at zero (no preference) as a reference point for viewers. Additionally, to clearly see what the average preference was across participants, I included a solid vertical line. Preferences were color coded with favoring ultraprocessed shown in red, and favoring unprocessed in green.
 
 ```{r}
 
