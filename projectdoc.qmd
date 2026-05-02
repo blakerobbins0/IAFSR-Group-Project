@@ -30,15 +30,13 @@ Additionally, no graphs or tables were included to visually represent the result
 
 Using AI tools like ChatGPT and Claude by Anthropic, we were able to clean our data, making it simpler to create plots in rStudio. Below are the following changes and transformations made to data:
 
-Dataset 1 changes: I restructured the data to create four graphs based on pleasantness of and arousal ratings for ultra-processed and unprocessed foods. I thought the data could be simplified by dividing the foods into categories by food group. Most groups had very little variation withing them, and made comparing across food groups much easier.
+First Dataset Changes: I restructured the data to create four graphs based on pleasantness of and arousal ratings for ultra-processed and unprocessed foods. I thought the data could be simplified by dividing the foods into categories by food group. Most groups had very little variation withing them, and made comparing across food groups much easier.
 
-Dataset 2 changes:
+Second Dataset Changes:
 
 Dataset 3 changes: I wanted to clearly be able to see from a numerical value whether consumers had higher intentions to choose ultra- or minimally processed foods, which the original data did not show. With help from ChatGPT, I added a column to my data that determined whether consumers preferred ultraprocessed or minimally processed foods from the positive or negative delta value. Additionally, all data was cleaned to remove missing or incomplete values and ensure that any categorical values matched.
 
 ## 5. Recreated Figures
-
-Datset 1 plots:
 
 All of the following plots allow the reader to compare food categories based on arousal or pleasantness rating. Ultra-processed and unprocessed/minimally processed foods were evaluated separately to avoid making the graphs overwhelming.
 
@@ -177,10 +175,6 @@ plot_bar(umpf, "Arousal_Mean",
          "Arousal – Unprocessed / Minimally Processed Foods",
          "Mean Arousal", "#2471A3")
 ```
-
-Dataset 2 plots:
-
-Dataset 3 plots:
 
 The following bar chat shows the overall preference direction of all study participants. By grouping and counting these responses, the dominant trend of the data can be quickly visualized for readers to understand the key takeaway from the data, which is what preference direction was the most common in the research.
 
